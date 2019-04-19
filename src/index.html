@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <p><img src="images/mi_03.png" alt=""></p>
+            <p><input type="text" name="" id="" placeholder="搜索商品名称"></p>
+            <p><img src="images/ren_03.png" alt=""></p>
+        </header>
+        <main>
+            <div class="nav">
+                <ul class="list">
+                    <!-- <li>推荐</li>
+                    <li>手机</li>
+                    <li>智能</li>
+                    <li>电视</li>
+                    <li>电脑</li>
+                    <li>全面屏</li>
+                    <li>生活</li> -->
+                </ul>
+            </div>
+            <div class="box">
+                <ul>
+                    <li><img src="images/phone_03.png" alt=""></li>
+                    <li><img src="images/phone_03.png" alt=""></li>
+                    <li><img src="images/phone_03.png" alt=""></li>
+                    <li><img src="images/phone_03.png" alt=""></li>
+                </ul>
+            </div>
+            <img src="images/comp_03.png" alt="">
+            <img src="images/4_03.png" alt="" class=".img">
+        </main>
+        <footer>
+            <dl>
+                <dt><i class="iconfont icon-shouye"></i></dt>
+                <dd>首页</dd>
+            </dl>
+            <dl>
+                <dt><i class="iconfont icon-shouye"></i></dt>
+                <dd>首页</dd>
+            </dl>
+            <dl>
+                <dt><i class="iconfont icon-shouye"></i></dt>
+                <dd>首页</dd>
+            </dl>
+            <dl>
+                <dt><i class="iconfont icon-shouye"></i></dt>
+                <dd>首页</dd>
+            </dl>
+            <dl>
+                <dt><i class="iconfont icon-shouye"></i></dt>
+                <dd>首页</dd>
+            </dl>
+        </footer>
+    </div>
+    <script src="js/flexible.js"></script>
+    <script>
+        let list = document.querySelector(".list");
+
+        function ajax(url, data = null, type = "GET") {
+            return new Promise((reslove, reject) => {
+                let xhr = new XMLHttpRequest();
+                xhr.open(type, url)
+                xhr.onreadystatechange = () => {
+                    if (xhr.readyState !== 4) return;
+                    if (xhr.status === 200) {
+                        reslove(xhr.responseText)
+                    } else {
+                        reject("500")
+                    }
+                }
+                xhr.send(null);
+            })
+        }
+
+        ajax("get").then(data => {
+
+        })
+    </script>
+</body>
+
+</html>
